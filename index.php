@@ -17,11 +17,11 @@ if (preg_match('/^id (\d+)/i', $message, $match)) {
     if ($conn->connect_error) {
         $reply = "Gagal koneksi ke database.";
     } else {
-        $result = $conn->query("SELECT * FROM users WHERE id = $id");
+        $result = $conn->query("SELECT * FROM pemenang WHERE id_pemenang = $id");
 
         if ($result->num_rows > 0) {
             $data = $result->fetch_assoc();
-            $reply = "ID: " . $data["id"] . "\nNama: " . $data["name"] . "\nEmail: " . $data["email"];
+            $reply = "ID: " . $data["id_pemenang"] . "\nNama: " . $data["nama"] . "\nEmail: " . $data["nik"];
         } else {
             $reply = "Data tidak ditemukan.";
         }
