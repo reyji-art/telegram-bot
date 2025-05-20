@@ -1,5 +1,5 @@
 <?php
-$token = "ISI_TOKEN_BOT_KAMU";
+$token = "7832708369:AAGMy2LBEuxMnmC2nhBrszL0FhYr2Hp_nxQ";
 
 $update = json_decode(file_get_contents("php://input"), true);
 $chat_id = $update["message"]["chat"]["id"];
@@ -11,7 +11,8 @@ if (preg_match('/^id (\d+)/i', $message, $match)) {
     $id = $match[1];
 
     // Ganti data koneksi sesuai database kamu
-    $conn = new mysqli("HOST_DB", "USER_DB", "PASSWORD_DB", "NAMA_DB");
+    $conn = new mysqli("sql12.freesqldatabase.com
+", "sql12779950", "IuvmKW82Y7", "sql12779950");
 
     if ($conn->connect_error) {
         $reply = "Gagal koneksi ke database.";
